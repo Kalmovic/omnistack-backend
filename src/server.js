@@ -12,7 +12,7 @@ const io = require('socket.io')(server);
 // Esse socket represneta a conexao real time entre o user com o servidor
 io.on('connection', socket => {
     //console.log('ok');
-    socket.io('connectRoom', box => {
+    socket.on('connectRoom', box => {
         // Isola o usuário a uma sala única
         socket.join(box);
     })
